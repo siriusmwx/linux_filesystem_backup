@@ -23,14 +23,15 @@ systemctl restart shadowsocks-libev
 echo "恭喜你，在你的本地电脑/home路径下新建ss.json文件，并填写如下信息，然后运行ss-local -c ~/ss.json:"
 cat << EOF
 {
-"server":"你的服务器IP地址",
-"server_port":${port},
-"local_port":1080,
-"password":"${password}",
-"timeout":600,
-"method":"aes-256-gcm",
-"fast_open":false,
-"plugin":"obfs-local",
-"plugin_opts":"obfs=tls;www.amazon.com"
+    "server":"你的服务器IP地址",
+    "server_port":${port},
+    "local_port":1080,
+    "password":"${password}",
+    "timeout":600,
+    "method":"aes-256-gcm",
+    "fast_open":false,
+    "plugin":"obfs-local",
+    "plugin_opts":"obfs=tls;www.amazon.com"
 }
 EOF
+# chromium-browser --proxy-server="socks5://127.0.0.1:1080"
